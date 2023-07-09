@@ -45,8 +45,10 @@ public class CreateServlet extends HttpServlet {
             task_table.setCreated_at(currentTime);
             task_table.setUpdated_at(currentTime);
 
+            // データベースに保存
             em.persist(task_table);
             em.getTransaction().commit();
+            request.getSession().setAttribute("flush", "登録が完了しました。");
             em.close();
 
             response.sendRedirect(request.getContextPath() + "/index");
