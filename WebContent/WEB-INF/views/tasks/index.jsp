@@ -9,7 +9,7 @@
         </c:if>
         <h2>タスク一覧</h2>
         <ul>
-            <c:forEach var="task" items="${tasks_scope}">
+            <c:forEach var="task" items="${tasks}">
                 <li>
                     <a href="${pageContext.request.contextPath}/show?id=${task.id}">
                         <c:out value="${task.id}" />
